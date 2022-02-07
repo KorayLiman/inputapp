@@ -25,7 +25,33 @@ class TextFieldOperations extends StatelessWidget {
         title: Text(title),
       ),
       body: Column(
-        children: [TextField()],
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextField(
+              autofocus: true,
+              keyboardType: TextInputType.number,
+              textInputAction: TextInputAction.next,
+              maxLength: 10,
+              maxLines: 1,
+              onChanged: (String str) => print(str),
+              onSubmitted: (String str) => print(str),
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(18))),
+                  suffixIcon: Icon(Icons.supervised_user_circle),
+                  prefixIcon: Icon(Icons.mail),
+                  label: const Text(
+                    "Username",
+                  ),
+                  hintText: "Enter hereee"),
+            ),
+          ),
+          TextField(
+            keyboardType: TextInputType.number,
+            textInputAction: TextInputAction.next,
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
